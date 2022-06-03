@@ -1,6 +1,6 @@
 NAME = so_long
 
-SRC =	main.c\
+SRC =	src/*.c\
 
 OBJS = $(SRC:.c=.o)
 
