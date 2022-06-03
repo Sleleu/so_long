@@ -6,13 +6,13 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 14:13:37 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/03 16:54:48 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/03 20:50:24 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-char	*ft_strjoin(char *s1, char *s2)
+char	*ft_strjoin_gnl(char *s1, char *s2)
 {
 	int		size;
 	int		i;
@@ -39,7 +39,7 @@ char	*ft_strjoin(char *s1, char *s2)
 	return (tab);
 }
 
-int	ft_strlen(char *str)
+static int	ft_strlen(char *str)
 {
 	int	i;
 
@@ -49,7 +49,7 @@ int	ft_strlen(char *str)
 	return (i);
 }
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr_gnl(char *s, int c)
 {
 	int				i;
 	unsigned char	search;

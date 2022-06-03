@@ -10,7 +10,7 @@ static char *result[] = {
 "y c #F8F000",
 "p c #F88058",
 "z c #485890",
-"b c #00FF00",
+"b c #0000",
 "Y c #F8F8F8",
 "I c #B8C8F0",
 /* pixels */

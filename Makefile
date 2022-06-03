@@ -1,6 +1,16 @@
 NAME = so_long
 
-SRC =	src/*.c\
+SRC =	src/main.c\
+	src/read_image.c\
+	src/read_map.c\
+
+INC =	includes/ft_printf/ft_printf.c\
+	includes/ft_printf/ft_format.c\
+	includes/ft_printf/ft_putchar_fd.c\
+	includes/ft_printf/ft_putnbr_fd.c\
+	includes/ft_printf/ft_putstr_fd.c\
+	includes/get_next_line/get_next_line.c\
+	includes/get_next_line/get_next_line_utils.c\
 
 OBJS = $(SRC:.c=.o)
 

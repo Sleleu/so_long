@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 14:15:13 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/03 16:50:48 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/03 20:51:20 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,16 +52,16 @@ static char	*ft_read_line(int fd, char *line, char *buff)
 	int	return_value;
 
 	return_value = 1;
-	line = ft_strjoin(line, buff);
-	while (!ft_strchr(line, '\n') && return_value != 0)
+	line = ft_strjoin_gnl(line, buff);
+	while (!ft_strchr_gnl(line, '\n') && return_value != 0)
 	{
 		return_value = read(fd, buff, BUFFER_SIZE);
 		if (return_value < 0)
 			return (NULL);
 		buff[return_value] = '\0';
-		line = ft_strjoin(line, buff);
+		line = ft_strjoin_gnl(line, buff);
 	}
-	if (ft_strchr(line, '\n'))
+	if (ft_strchr_gnl(line, '\n'))
 	{
 		buff = ft_get_endline(line, buff);
 		line = ft_get_line(line);
