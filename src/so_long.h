@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:18:01 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/06 16:57:40 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/06 21:10:06 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ typedef struct s_map
 	int	width;
 	int	height;
 	int	nb_C;
-	int	pos_P;
-	int	pos_E;
+	int	nb_P;
+	int	nb_E;
 }		t_map;
 
 typedef struct s_pos
@@ -48,5 +48,7 @@ typedef struct s_pos
 }		t_pos;
 
 void	ft_init_charmander(void *mlx, void *mlx_win);
+int	ft_error(char **map_tab, t_map map_content);
+int	ft_strlen_so_long(char *str);
 
 #endif

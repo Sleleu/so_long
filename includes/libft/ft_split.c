@@ -6,13 +6,13 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 20:48:25 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/06 17:04:58 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/06 17:25:17 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*static void	ft_free(char **tab)
+static void	ft_free(char **tab)
 {
 	int	i;
 
@@ -23,7 +23,7 @@
 		i++;
 	}
 	free(tab);
-}*/
+}
 
 static int	ft_count(char const *s, char c)
 {
@@ -83,6 +83,11 @@ char	**ft_split(char const *s, char c)
 		if (*s && *s != c)
 		{
 			tab[i] = ft_word(s, c);
+			if (!tab[i])
+			{
+				ft_free(tab);
+				return (NULL);
+			}
 			i++;
 		}
 		while (*s && *s != c)

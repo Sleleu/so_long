@@ -3,6 +3,7 @@ NAME = so_long
 SRC =	src/main.c\
 	src/read_image.c\
 	src/read_map.c\
+	src/parser.c\
 
 INC =	includes/ft_printf/ft_printf.c\
 	includes/ft_printf/ft_format.c\
@@ -12,6 +13,8 @@ INC =	includes/ft_printf/ft_printf.c\
 	includes/get_next_line/get_next_line.c\
 	includes/get_next_line/get_next_line_utils.c\
 	includes/libft/ft_split.c\
+	includes/libft/ft_calloc.c\
+	includes/libft/ft_bzero.c\
 
 OBJS = $(SRC:.c=.o)
 
