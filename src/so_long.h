@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:18:01 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/03 21:00:09 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/06 16:57:40 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "../includes/get_next_line/get_next_line.h"
 #include "../includes/ft_printf/ft_printf.h"
+#include "../includes/libft/libft.h"
 
 typedef struct s_data
 {
@@ -45,15 +46,6 @@ typedef struct s_pos
 	int	x;
 	int	y;
 }		t_pos;
-
-enum 
-{
-	KEY_W = 13,
-	KEY_A = 0,
-	KEY_D = 2,
-	KEY_S = 1,
-	KEY_ESC = 53;
-};
 
 void	ft_init_charmander(void *mlx, void *mlx_win);
 

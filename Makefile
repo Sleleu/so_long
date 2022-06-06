@@ -11,6 +11,7 @@ INC =	includes/ft_printf/ft_printf.c\
 	includes/ft_printf/ft_putstr_fd.c\
 	includes/get_next_line/get_next_line.c\
 	includes/get_next_line/get_next_line_utils.c\
+	includes/libft/ft_split.c\
 
 OBJS = $(SRC:.c=.o)
 

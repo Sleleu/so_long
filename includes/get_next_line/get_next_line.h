@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 14:12:06 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/03 17:53:49 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/06 16:53:44 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 # include <fcntl.h>
 
 char	*get_next_line(int fd);
-char	*ft_strjoin(char *s1, char *s2);
+char	*ft_strjoin_gnl(char *s1, char *s2);
 int		ft_strlen(char *str);
-char	*ft_strchr(char *s, int c);
+char	*ft_strchr_gnl(char *s, int c);
 
 #endif
