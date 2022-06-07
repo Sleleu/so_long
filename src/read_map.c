@@ -6,17 +6,12 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 20:32:00 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/07 22:44:14 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/07 22:52:29 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
-#include <stdio.h>
-//#include <mlx.h>
-
-#include <stdlib.h> //SUPP
-#include <fcntl.h> //SUPP
-#include <stddef.h> //SUPP
+#include <mlx.h>
 
 int	ft_strlen_so_long(char *str)
 {
@@ -73,7 +68,7 @@ char	**ft_read_map(int fd)
 	return (map_tab);
 }
 
-void	ft_get_map_stat(/*char **map_tab, */t_map *map)
+void	ft_get_map_stat(t_map *map)
 {
 	int	y;
 	int	x;
@@ -99,12 +94,10 @@ void	ft_get_map_stat(/*char **map_tab, */t_map *map)
 		map->height++;
 		y++;
 	}
-	//return (map);
 }
 
-char	**ft_set_map(int argc, char *argv, /*char **map_tab, */t_map *map)
+char	**ft_set_map(int argc, char *argv, t_map *map)
 {
-	//t_map	map;
 	int		fd;
 
 	if (argc != 2)
@@ -120,8 +113,8 @@ char	**ft_set_map(int argc, char *argv, /*char **map_tab, */t_map *map)
 	}
 	map->map_tab = ft_read_map(fd);
 	close(fd);
-	ft_get_map_stat(/*map_tab, */map);
-	if (ft_error(/*map_tab, */map) == 0)
+	ft_get_map_stat(map);
+	if (ft_error(map) == 0)
 		return (NULL);
 	return (map->map_tab);
 }

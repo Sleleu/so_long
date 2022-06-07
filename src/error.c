@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:32:28 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/07 22:42:56 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/07 22:52:56 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	ft_entity_error(t_map *map)
 	return (1);
 }
 
-int	ft_form_error(/*char **map_tab, */t_map *map, int len)
+int	ft_form_error(t_map *map, int len)
 {
 	int	i;
 
@@ -50,7 +50,7 @@ int	ft_form_error(/*char **map_tab, */t_map *map, int len)
 	return (1);
 }
 
-int	ft_wall_error(/*char **map_tab, */t_map *map, int len)
+int	ft_wall_error(t_map *map, int len)
 {
 	int	i;
 	int	j;
@@ -78,15 +78,15 @@ int	ft_wall_error(/*char **map_tab, */t_map *map, int len)
 	return (1);
 }
 
-int	ft_error(/*char **map_tab, */t_map *map)
+int	ft_error(t_map *map)
 {
 	int	len;
 
 	len = ft_strlen_so_long(map->map_tab[0]) - 1;
-	if (!ft_form_error(/*map_tab, */map, len)
+	if (!ft_form_error(map, len)
 		|| !ft_entity_error(map))
 		return (0);
-	else if (!ft_wall_error(/*map_tab, */map, len))
+	else if (!ft_wall_error(map, len))
 	{
 		ft_printf("Error\nMap not closed\n");
 		return (0);

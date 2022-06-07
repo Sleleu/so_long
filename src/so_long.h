@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:18:01 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/07 22:44:59 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/07 22:52:16 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include "../includes/libft/libft.h"
 # include <fcntl.h>
 # include <stdio.h>
+# include <stddef.h>
 
 # define KEY_ESC		65307
 # define KEY_W			119
@@ -35,26 +36,31 @@ enum
 	ON_EXPOSE = 12,
 	ON_DESTROY = 17
 };
-/*
-typedef struct s_vars
-{
-	void	*mlx;
-	void	*mlx_win;
-}		t_vars;*/
 
 typedef struct s_map
 {
 	void	*mlx;
 	void	*mlx_win;
+	void	*char_back;
+	void	*char_front;
+	void	*char_left;
+	void	*char_right;
+	void	*tree;
+	void	*ground;
+	void	*exit;
+	void	*berry;
 	char	**map_tab;
 	int		width;
 	int		height;
 	int		nb_c;
-	int		coll_c;
+	int		get_c;
 	int		nb_p;
+	int		p_x;
+	int		p_y;
 	int		nb_e;
+	int		nb_move;
 }		t_map;
-
+/*
 typedef struct s_img
 {
 	void	*char_back;
@@ -65,7 +71,7 @@ typedef struct s_img
 	void	*ground;
 	void	*exit;
 	void	*berry;
-}		t_img;
+}		t_img;*/
 
 typedef struct s_pos
 {
@@ -73,11 +79,11 @@ typedef struct s_pos
 	int	y;
 }		t_pos;
 
-int		ft_error(/*char **map_tab, */t_map *map);
-void	ft_get_map_stat(/*char **map_tab, */t_map *map);
-char	**ft_set_map(int argc, char *argv, /*char **map_tab, */t_map *map);
-void	ft_init_game(/*char **map_tab,*/ t_map *map);
+int		ft_error(t_map *map);
+void	ft_get_map_stat(t_map *map);
+char	**ft_set_map(int argc, char *argv, t_map *map);
+void	ft_init_game(t_map *map);
 int		ft_strlen_so_long(char *str);
-void	ft_game(/*char **map_tab,*/ t_img *img, t_map *map);
+void	ft_game(t_map *map);
 
 #endif
