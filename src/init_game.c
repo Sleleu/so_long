@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 14:18:02 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/07 17:27:00 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/07 18:21:29 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,6 @@ void	ft_init_game(char **map_tab)
 			(map_content.height * 24), "so_long");
 	img = ft_init_img(map_tab, vars);
 	ft_set_img(map_tab, img, vars);
-	//ft_game(map_tab, img, vars, map_content);
+	ft_game(map_tab, img, vars, map_content);
 	mlx_loop(vars->mlx);
 }

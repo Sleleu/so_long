@@ -4,6 +4,7 @@ SRC =	src/main.c\
 	src/read_map.c\
 	src/error.c\
 	src/init_game.c\
+	src/game.c\
 
 INC =	includes/ft_printf/ft_printf.c\
 	includes/ft_printf/ft_format.c\
