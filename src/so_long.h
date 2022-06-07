@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:18:01 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/06 21:10:06 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/07 17:24:08 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef struct s_data
 typedef struct s_vars
 {
 	void	*mlx;
-	void	*win;
+	void	*mlx_win;
 }		t_vars;
 
 typedef struct s_map
@@ -41,6 +41,18 @@ typedef struct s_map
 	int	nb_E;
 }		t_map;
 
+typedef struct s_img
+{
+	void	*char_back;
+	void	*char_front;
+	void	*char_left;
+	void	*char_right;
+	void	*tree;
+	void	*ground;
+	void	*exit;
+	void	*berry;
+}		t_img;
+
 typedef struct s_pos
 {
 	int	x;
@@ -49,6 +61,9 @@ typedef struct s_pos
 
 void	ft_init_charmander(void *mlx, void *mlx_win);
 int	ft_error(char **map_tab, t_map map_content);
+t_map	ft_get_map_stat(char **map_tab, t_map map_content);
+char	**ft_set_map(int argc, char *argv, char **map_tab);
+void	ft_init_game(char **map_tab);
 int	ft_strlen_so_long(char *str);
 
 #endif

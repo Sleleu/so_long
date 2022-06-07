@@ -1,9 +1,9 @@
 NAME = so_long
 
 SRC =	src/main.c\
-	src/read_image.c\
 	src/read_map.c\
-	src/parser.c\
+	src/error.c\
+	src/init_game.c\
 
 INC =	includes/ft_printf/ft_printf.c\
 	includes/ft_printf/ft_format.c\
@@ -26,7 +26,7 @@ CC = gcc
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(SRC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+	$(CC) $(SRC) $(INC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 
 clean:
 	rm -rfv $(OBJS)

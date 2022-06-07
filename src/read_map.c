@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 20:32:00 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/06 21:39:53 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/07 14:33:47 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,6 @@ char	**ft_read_map(int fd)
 	char	*map_line;
 	char	**map_tab;
 
-//	if (fd <= 0)
-//		ft_printf("Error\n Failed to open file\n");
-//			return (NULL);
 	while (42)
 	{
 		line = get_next_line(fd);
@@ -105,23 +102,40 @@ t_map	ft_get_map_stat(char **map_tab, t_map map_content)
 	return (map_content);
 }
 
-int	ft_set_map(char *argv)
+char	**ft_set_map(int argc, char *argv, char **map_tab)
 {
 	t_map	map_content;
-	char	**map_tab;
 	int		fd;
+
+	if (argc != 2)
+	{
+		ft_printf("Error \nInvalid argument\n");
+		return (NULL);
+	}
 	fd = open(argv, O_RDONLY);
+	if (fd <= 0)
+	{
+		ft_printf("Error\nFailed to open file\n");
+		return (NULL);
+	}
 	map_tab = ft_read_map(fd);
 	close(fd);
 	map_content = ft_get_map_stat(map_tab, map_content);
-	if (ft_error(map_tab, map_content) == 0);
-		return (0);
-	return (1);
+	if (ft_error(map_tab, map_content) == 0)
+		return (NULL);
+	return (map_tab);
 }
-
+/*
 int	main(int argc, char **argv)
 {
-	(void)argc;
-	ft_set_map(argv[1]);
+	char	**map_tab;
+	map_tab = ft_set_map(argc, argv[1], map_tab);
+		if (!map_tab)
+			return (1);
+
+	int	i = -1;
+
+	while (map_tab[++i])
+		printf("%s\n", map_tab[i]);
 	return (0);
-}
+}*/
