@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:41:55 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/07 17:02:08 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/07 22:36:59 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 
 int	main(int argc, char **argv)
 {
-	char	**map_tab;
+	t_map	map;
+	//char	**map_tab;
 
-	map_tab = ft_set_map(argc, argv[1], map_tab);
-		if (!map_tab)
+	ft_set_map(argc, argv[1],/* map_tab, */&map);
+		if (!map.map_tab)
 			return (1);
-	ft_init_game(map_tab);
+	ft_init_game(/*map_tab,*/ &map);
 	return (0);
 }

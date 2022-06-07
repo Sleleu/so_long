@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 20:32:00 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/07 14:33:47 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/07 22:44:14 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,38 +73,38 @@ char	**ft_read_map(int fd)
 	return (map_tab);
 }
 
-t_map	ft_get_map_stat(char **map_tab, t_map map_content)
+void	ft_get_map_stat(/*char **map_tab, */t_map *map)
 {
 	int	y;
 	int	x;
 
 	y = 0;
-	map_content.width = ft_strlen_so_long(map_tab[y]);
-	map_content.height = 0;
-	map_content.nb_C = 0;
-	map_content.nb_P = 0;
-	map_content.nb_E = 0;
-	while (map_tab[y])
+	map->height = 0;
+	map->width = ft_strlen_so_long(map->map_tab[y]);
+	map->nb_c = 0;
+	map->nb_p = 0;
+	map->nb_e = 0;
+	while (map->map_tab[y])
 	{
 		x = 0;
-		while (map_tab[y][++x])
+		while (map->map_tab[y][++x])
 		{
-			if (map_tab[y][x] == 'C')
-				map_content.nb_C++;
-			else if (map_tab[y][x] == 'P')
-				map_content.nb_P++;
-			else if (map_tab[y][x] == 'E')
-				map_content.nb_E++;
+			if (map->map_tab[y][x] == 'C')
+				map->nb_c++;
+			else if (map->map_tab[y][x] == 'P')
+				map->nb_p++;
+			else if (map->map_tab[y][x] == 'E')
+				map->nb_e++;
 		}
-		map_content.height++;
+		map->height++;
 		y++;
 	}
-	return (map_content);
+	//return (map);
 }
 
-char	**ft_set_map(int argc, char *argv, char **map_tab)
+char	**ft_set_map(int argc, char *argv, /*char **map_tab, */t_map *map)
 {
-	t_map	map_content;
+	//t_map	map;
 	int		fd;
 
 	if (argc != 2)
@@ -118,12 +118,12 @@ char	**ft_set_map(int argc, char *argv, char **map_tab)
 		ft_printf("Error\nFailed to open file\n");
 		return (NULL);
 	}
-	map_tab = ft_read_map(fd);
+	map->map_tab = ft_read_map(fd);
 	close(fd);
-	map_content = ft_get_map_stat(map_tab, map_content);
-	if (ft_error(map_tab, map_content) == 0)
+	ft_get_map_stat(/*map_tab, */map);
+	if (ft_error(/*map_tab, */map) == 0)
 		return (NULL);
-	return (map_tab);
+	return (map->map_tab);
 }
 /*
 int	main(int argc, char **argv)
