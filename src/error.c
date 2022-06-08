@@ -6,12 +6,36 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:32:28 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/07 22:52:56 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/08 20:37:29 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 #include "stdio.h"
+
+int	ft_char_error(t_map *map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (map->map_tab[i])
+	{
+		j = 0;
+		while (map->map_tab[i][j])
+		{
+			if (map->map_tab[i][j] != '1'
+			&& map->map_tab[i][j] != '0'
+			&& map->map_tab[i][j] != 'C'
+			&& map->map_tab[i][j] != 'E'
+			&& map->map_tab[i][j] != 'P')
+				return (0);
+			j++;
+		}
+		i++;
+	}
+	return (1);
+}
 
 int	ft_entity_error(t_map *map)
 {
@@ -83,6 +107,11 @@ int	ft_error(t_map *map)
 	int	len;
 
 	len = ft_strlen_so_long(map->map_tab[0]) - 1;
+	if (!ft_char_error(map))
+	{
+		ft_printf("Error\nInvalid character on map\n");
+		return (0);
+	}
 	if (!ft_form_error(map, len)
 		|| !ft_entity_error(map))
 		return (0);

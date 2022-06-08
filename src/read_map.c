@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 20:32:00 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/08 19:56:11 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/09 00:06:56 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	ft_strlen_so_long(char *str)
 	return (i);
 }
 
-static char	*ft_strjoin_so_long(char *s1, char *s2)
+char	*ft_strjoin_so_long(char *s1, char *s2)
 {
 	int		size;
 	int		i;
@@ -47,15 +47,18 @@ static char	*ft_strjoin_so_long(char *s1, char *s2)
 	}
 	tab[size] = '/';
 	tab[size + 1] = '\0';
+	if (s1)
+		free(s1);
 	return (tab);
 }
 
-char	**ft_read_map(int fd)
+void	ft_read_map(int fd, t_map *map)
 {
 	char	*line;
 	char	*map_line;
-	char	**map_tab;
 
+	line = NULL;
+	map_line = NULL;
 	while (42)
 	{
 		line = get_next_line(fd);
@@ -64,8 +67,8 @@ char	**ft_read_map(int fd)
 		map_line = ft_strjoin_so_long(map_line, line);
 		free(line);
 	}
-	map_tab = ft_split(map_line, '/');
-	return (map_tab);
+	map->map_tab = ft_split(map_line, '/');
+	free(map_line);
 }
 
 void	ft_get_map_stat(t_map *map)
@@ -106,7 +109,7 @@ char	**ft_set_map(int argc, char *argv, t_map *map)
 		ft_printf("Error\nFailed to open file\n");
 		return (NULL);
 	}
-	map->map_tab = ft_read_map(fd);
+	ft_read_map(fd, map);
 	close(fd);
 	ft_get_map_stat(map);
 	if (ft_error(map) == 0)

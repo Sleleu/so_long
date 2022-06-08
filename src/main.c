@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 14:41:55 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/08 20:03:00 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/09 00:06:43 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 {
 	t_map	map;
 	int		test_fd;
-	char	*test_file;
+	char	test_file[1];
 
 	test_fd = open(argv[1], O_RDONLY);
 	if (!read(test_fd, test_file, 1))
@@ -32,7 +32,10 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	if (!ft_set_map(argc, argv[1], &map))
+	{
+		free_map_tab(&map);
 		return (1);
+	}
 	ft_init_game(&map);
 	return (0);
 }

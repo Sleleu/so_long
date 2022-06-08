@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 18:13:56 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/08 18:32:36 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/08 23:20:59 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,13 +81,13 @@ int	key_hook(int keycode, t_map *map)
 {
 	if (keycode == KEY_ESC)
 		close_game(map);
-	if (keycode == KEY_W)
+	if (keycode == KEY_W || keycode == KEY_UP)
 		move_w(keycode, map);
-	if (keycode == KEY_D)
+	if (keycode == KEY_D || keycode == KEY_RIGHT)
 		move_d(keycode, map);
-	if (keycode == KEY_S)
+	if (keycode == KEY_S || keycode == KEY_DOWN)
 		move_s(keycode, map);
-	if (keycode == KEY_A)
+	if (keycode == KEY_A || keycode == KEY_LEFT)
 		move_a(keycode, map);
 	return (0);
 }

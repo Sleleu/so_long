@@ -29,7 +29,7 @@ CC = gcc
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(SRC) $(INC) $(OBJ) -g3 -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+	$(CC) $(SRC) $(INC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 
 clean:
 	rm -rfv $(OBJS)
