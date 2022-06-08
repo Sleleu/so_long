@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:18:01 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/07 22:52:16 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/08 19:11:27 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ typedef struct s_map
 	void	*ground;
 	void	*exit;
 	void	*berry;
+	void	*berry2;
 	char	**map_tab;
 	int		width;
 	int		height;
@@ -60,18 +61,6 @@ typedef struct s_map
 	int		nb_e;
 	int		nb_move;
 }		t_map;
-/*
-typedef struct s_img
-{
-	void	*char_back;
-	void	*char_front;
-	void	*char_left;
-	void	*char_right;
-	void	*tree;
-	void	*ground;
-	void	*exit;
-	void	*berry;
-}		t_img;*/
 
 typedef struct s_pos
 {
@@ -82,8 +71,23 @@ typedef struct s_pos
 int		ft_error(t_map *map);
 void	ft_get_map_stat(t_map *map);
 char	**ft_set_map(int argc, char *argv, t_map *map);
-void	ft_init_game(t_map *map);
 int		ft_strlen_so_long(char *str);
 void	ft_game(t_map *map);
+int		key_hook(int keycode, t_map *map);
+int		close_game(t_map *map);
+void	ft_game(t_map *map);
+int		check_exit(t_map *map, int y, int x);
+void	set_char(int keycode, t_map *map);
+void	check_item(t_map *map, int y, int x);
+void	set_ground(t_map *map, int y, int x);
+void	set_char(int keycode, t_map *map);
+int		close_game(t_map *map);
+
+/* init_game */
+
+void	ft_set_img(t_map *map);
+void	ft_set_item(t_map *map, t_pos pos);
+void	ft_init_game(t_map *map);
+void	ft_init_img(t_map *map);
 
 #endif

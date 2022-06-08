@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 16:25:56 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/03 20:00:48 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/08 15:26:28 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int	main(void)
 	int		fd;
 	char	*str;
 
-	fd = open("charmander_left.xpm", O_RDONLY);
+	fd = open("char_left.xpm", O_RDONLY);
 	if (fd >= 0)
 	{
 		while (1)

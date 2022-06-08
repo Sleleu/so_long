@@ -5,6 +5,8 @@ SRC =	src/main.c\
 	src/error.c\
 	src/init_game.c\
 	src/game.c\
+	src/move.c\
+	src/set_textures.c\
 
 INC =	includes/ft_printf/ft_printf.c\
 	includes/ft_printf/ft_format.c\
@@ -36,5 +38,11 @@ fclean: clean
 	rm -rfv $(NAME)
 
 re: fclean all
+
+norme:
+	@echo "\033[35;36m\n\n === INCLUDES FILES === \n\n"
+	norminette includes/*
+	@echo "\033[35;32m\n\n === FILES OF SO_LONG === \n\n"
+	norminette src/*
 
 .PHONY: all clean fclean re

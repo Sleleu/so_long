@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 20:32:00 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/07 22:52:29 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/08 19:56:11 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,11 +100,6 @@ char	**ft_set_map(int argc, char *argv, t_map *map)
 {
 	int		fd;
 
-	if (argc != 2)
-	{
-		ft_printf("Error \nInvalid argument\n");
-		return (NULL);
-	}
 	fd = open(argv, O_RDONLY);
 	if (fd <= 0)
 	{
