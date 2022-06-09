@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 20:32:00 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/09 00:06:56 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/09 02:20:27 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,16 +99,8 @@ void	ft_get_map_stat(t_map *map)
 	}
 }
 
-char	**ft_set_map(int argc, char *argv, t_map *map)
+char	**ft_set_map(int fd, t_map *map)
 {
-	int		fd;
-
-	fd = open(argv, O_RDONLY);
-	if (fd <= 0)
-	{
-		ft_printf("Error\nFailed to open file\n");
-		return (NULL);
-	}
 	ft_read_map(fd, map);
 	close(fd);
 	ft_get_map_stat(map);
@@ -116,17 +108,3 @@ char	**ft_set_map(int argc, char *argv, t_map *map)
 		return (NULL);
 	return (map->map_tab);
 }
-/*
-int	main(int argc, char **argv)
-{
-	char	**map_tab;
-	map_tab = ft_set_map(argc, argv[1], map_tab);
-		if (!map_tab)
-			return (1);
-
-	int	i = -1;
-
-	while (map_tab[++i])
-		printf("%s\n", map_tab[i]);
-	return (0);
-}*/

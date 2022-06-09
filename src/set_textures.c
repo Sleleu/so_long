@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 18:21:54 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/08 23:27:15 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/09 01:52:46 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int	check_exit(t_map *map, int y, int x)
 	{
 		if (map->nb_c == map->get_c)
 		{
-			ft_printf("\nYou won !\n");
+			ft_printf("\nYou won !\n\n");
 			close_game(map);
 		}
 		else

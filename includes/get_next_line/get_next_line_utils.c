@@ -6,11 +6,27 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 14:13:37 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/09 00:10:45 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/09 01:48:21 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
+#include "../src/so_long.h"
+
+int	ft_test_file(char *argv)
+{
+	int		fd;
+	char	test[1];
+
+	fd = open(argv, O_RDONLY);
+	if (!read(fd, test, 1))
+	{
+		ft_printf("Error\nEmpty file\n");
+		return (0);
+	}
+	close(fd);
+	return (1);
+}
 
 char	*ft_strjoin_gnl(char *s1, char *s2)
 {

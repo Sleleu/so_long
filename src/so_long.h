@@ -6,7 +6,7 @@
 /*   By: sleleu <sleleu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 17:18:01 by sleleu            #+#    #+#             */
-/*   Updated: 2022/06/08 23:45:22 by sleleu           ###   ########.fr       */
+/*   Updated: 2022/06/09 03:02:29 by sleleu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include "../includes/get_next_line/get_next_line.h"
 # include "../includes/ft_printf/ft_printf.h"
-# include "../includes/libft/libft.h"
 # include <fcntl.h>
 # include <stdio.h>
 # include <stddef.h>
@@ -64,7 +63,7 @@ typedef struct s_pos
 
 /* read_map */
 
-char	**ft_set_map(int argc, char *argv, t_map *map);
+char	**ft_set_map(int fd, t_map *map);
 void	ft_get_map_stat(t_map *map);
 void	ft_read_map(int fd, t_map *map);
 char	*ft_strjoin_so_long(char *s1, char *s2);
@@ -106,5 +105,11 @@ void	set_char(int keycode, t_map *map);
 void	set_ground(t_map *map, int y, int x);
 int		check_exit(t_map *map, int y, int x);
 void	check_item(t_map *map, int y, int x);
+
+/* includes */
+
+char	**ft_split(char const *s, char c);
+void	*ft_calloc(size_t nmemb, size_t size);
+void	ft_bzero(void *s, size_t n);
 
 #endif
