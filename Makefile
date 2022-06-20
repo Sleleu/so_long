@@ -28,11 +28,15 @@ CC = gcc
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): ./mlx_linux/libmlx.a $(OBJ)
 	$(CC) $(SRC) $(INC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+
+mlx_linux/libmlx.a:
+	make -C mlx_linux
 
 clean:
 	rm -rfv $(OBJS)
+	make clean -C mlx_linux
 
 fclean: clean
 	rm -rfv $(NAME)
