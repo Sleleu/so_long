@@ -12,7 +12,7 @@ The other goals are similar to every first projects of the common core of 42 : b
 
 The player’s goal is to collect every collectible present on the map, then escape chosing the shortest possible route.
 
-It's possible to move the main character with **W,A,S,D**, the player cannot move into walls, and a number of mouvements is displayed in the shell>
+It's possible to move the main character with `W`,`A`,`S`,`D`, the player cannot move into walls, and the number of mouvements is displayed in the shell
 
 ## Installation
 
