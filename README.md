@@ -60,9 +60,9 @@ This map is converted in-game as follows :
 
 The map can be composed of only these 5 characters :
 - `0` for an empty space,
-- `1` for a wall
-- `C` for a collectible
-- `E` for a map exit
-- `P` for the player's starting position
+- `1` for a wall,
+- `C` for a collectible,
+- `E` for a map exit,
+- `P` for the player's starting position.
 
 The map must be rectangular, closed by walls, and constain at least **1 exit, 1 collectible and 1 starting position**.
