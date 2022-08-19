@@ -18,8 +18,8 @@ It's possible to move the main character with **W,A,S,D**, the player cannot mov
 
 ### clone the repository
 
-'''shell
+```shell
 git clone git@github.com:Sleleu/so_long.git
 cd so_long
 make
-'''
+```
