@@ -53,6 +53,11 @@ It is possible to create your own maps following the rules imposed by the projec
 1111111111111
 ```
 
+This map is converted in-game as follows :
+
+![so_long2](https://user-images.githubusercontent.com/93100775/185700334-629aab75-c572-4dd4-a88a-207463c6ccbe.jpg)
+
+
 The map can be composed of only these 5 characters :
 - `0` for an empty space,
 - `1` for a wall
