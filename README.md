@@ -41,7 +41,7 @@ Example :
 
 4 maps are present in the maps file.
 
-### Create your own maps
+## Create your own maps
 
 It is possible to create your own maps following the rules imposed by the project. Here is a simple valid map :
 
